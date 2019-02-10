@@ -1,0 +1,73 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "prepare me",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hello",
+                        "how are you",
+                        "say hi world",
+                        "say hi",
+                        "hi",
+                        "say hello world",
+                        "say hello"
+                    ]
+                },
+                {
+                    "name": "ForestWildLifeIntent",
+                    "slots": [],
+                    "samples": [
+                        "a fact on wild life and forest",
+                        "a wild life fact",
+                        "tell me a fact",
+                        "tell me a forest fact",
+                        "give me a fact",
+                        "give me a forest and wild life fact",
+                        "tell me trivia",
+                        "tell me a forest and wild life trivia",
+                        "give me trivia on Wild life",
+                        "give me a forest and wild life trivia",
+                        "give me some information on Wild Life and Forests",
+                        "give me some Wild life information",
+                        "tell me something on Forest and Wild life",
+                        "give me something on Wild life and forests"
+                    ]
+                },
+                {
+                    "name": "FrictionIntent",
+                    "slots": [],
+                    "samples": [
+                        "Friction",
+                        "Tell me about Frictional Force",
+                        "Give me information on Friction",
+                        "Give me trivia about Friction",
+                        "Frictional Force",
+                        "Tell me about Friction",
+                        "Tell me something about Friction",
+                        "Give me something on Friction"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
+}
