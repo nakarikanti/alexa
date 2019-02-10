@@ -28,6 +28,19 @@ const HelloWorldIntentHandler = {
             .getResponse();
     }
 };
+const ForestWildLifeIntentHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'ForestWildLifeIntent';
+    },
+    handle(handlerInput) {
+        const speechText = 'ForestWildLifeIntent is selected now';
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .getResponse();
+    }
+};
 
 const HelpIntentHandler = {
     canHandle(handlerInput) {
@@ -110,6 +123,7 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         HelloWorldIntentHandler,
+        ForestWildLifeIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
