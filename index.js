@@ -3,6 +3,30 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 
+const enData = {
+  translation: {
+    SKILL_NAME: 'Prepare Me',
+    GET_FORESTWILDLIFE_FACT_MESSAGE: 'Here\'s your Forest and Wild Life Fact: ' ,
+    GET_FRICTION_FACT_MESSAGE: 'Here\'s your Friction Fact: ',
+    GET_FACT_MESSAGE: 'Here\'s your fact: ',
+    HELP_MESSAGE: 'You can say tell me a fact, or, you can say exit... What can I help you with?',
+    HELP_REPROMPT: 'What can I help you with?',
+    FALLBACK_MESSAGE: 'The Prepare Me skill can\'t help you with that.  It can help you discover facts about Friction, Forest and Wild life. What can I help you with?',
+    FALLBACK_REPROMPT: 'What can I help you with?',
+    ERROR_MESSAGE: 'Sorry, an error occurred.',
+    STOP_MESSAGE: 'Goodbye!',
+    FORESTWILDLIFEFACTS:
+      [
+        '30% of earth\'s total land area is covered by forests',
+        'Forests are home to 80% of world\'s terrestrial bio diversity.',
+        'The word Forest has been derived from the latin word foris which means outside the village boundary.',
+        'Plants are known as producers as they make their own food using carbon dioxide, water and sunlight.',
+        'Animals are known as consumers as they eat plants or other animals or both.',
+      ],
+  },
+};
+
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
@@ -21,7 +45,7 @@ const HelloWorldIntentHandler = {
             && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
     },
     handle(handlerInput) {
-        const speechText = 'Hello World!';
+        const speechText = 'Hello, I am here to prepare your for future,  What\'s your name?';
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt('you can say Hello or Help or get facts about Friction or Forest and Wild Life. Which would you like to try?')
