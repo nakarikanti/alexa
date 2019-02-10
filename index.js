@@ -8,7 +8,7 @@ const LaunchRequestHandler = {
         return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speechText = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        const speechText = 'Welcome, you can say Hello or Help or get facts about Friction or Forest and Wild Life. Which would you like to try?';
         return handlerInput.responseBuilder
             .speak(speechText)
             .reprompt(speechText)
@@ -24,7 +24,7 @@ const HelloWorldIntentHandler = {
         const speechText = 'Hello World!';
         return handlerInput.responseBuilder
             .speak(speechText)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .reprompt('you can say Hello or Help or get facts about Friction or Forest and Wild Life. Which would you like to try?')
             .getResponse();
     }
 };
@@ -37,6 +37,22 @@ const ForestWildLifeIntentHandler = {
         const speechText = 'ForestWildLifeIntent is selected now';
         return handlerInput.responseBuilder
             .speak(speechText)
+            .reprompt('you can say Hello or Help or get facts about Friction or Forest and Wild Life. Which would you like to try?')
+            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+            .getResponse();
+    }
+};
+
+const FrictionIntenttHandler = {
+    canHandle(handlerInput) {
+        return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+            && handlerInput.requestEnvelope.request.intent.name === 'FrictionIntent';
+    },
+    handle(handlerInput) {
+        const speechText = 'FrictionIntent is selected now';
+        return handlerInput.responseBuilder
+            .speak(speechText)
+            .reprompt('you can say Hello or Help or get facts about Friction or Forest and Wild Life. Which would you like to try?')
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
@@ -124,6 +140,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         LaunchRequestHandler,
         HelloWorldIntentHandler,
         ForestWildLifeIntentHandler,
+        FrictionIntenttHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
